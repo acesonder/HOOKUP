@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HOOKUP Platform</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>🔥 HOOKUP</h2>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <span class="icon">📊</span> Overview
+                </a>
+                <a href="#videos" class="nav-item" data-section="videos">
+                    <span class="icon">📹</span> Videos
+                </a>
+                <a href="#pictures" class="nav-item" data-section="pictures">
+                    <span class="icon">📸</span> Pictures
+                </a>
+                <a href="#meetups" class="nav-item" data-section="meetups">
+                    <span class="icon">📍</span> Meetups
+                </a>
+                <a href="#chat" class="nav-item" data-section="chat">
+                    <span class="icon">💬</span> Chat
+                    <span class="badge">3</span>
+                </a>
+                <a href="#profile" class="nav-item" data-section="profile">
+                    <span class="icon">👤</span> Profile
+                </a>
+                <a href="#upload" class="nav-item" data-section="upload">
+                    <span class="icon">⬆️</span> Upload Content
+                </a>
+                <a href="#favorites" class="nav-item" data-section="favorites">
+                    <span class="icon">⭐</span> Favorites
+                </a>
+                <a href="#matches" class="nav-item" data-section="matches">
+                    <span class="icon">💘</span> Matches
+                </a>
+                <a href="#friends" class="nav-item" data-section="friends">
+                    <span class="icon">👥</span> Friends
+                </a>
+                <a href="#notifications" class="nav-item" data-section="notifications">
+                    <span class="icon">🔔</span> Notifications
+                    <span class="badge">12</span>
+                </a>
+                <a href="#search" class="nav-item" data-section="search">
+                    <span class="icon">🔍</span> Advanced Search
+                </a>
+                <a href="#analytics" class="nav-item" data-section="analytics">
+                    <span class="icon">📈</span> Analytics
+                </a>
+                <a href="#calendar" class="nav-item" data-section="calendar">
+                    <span class="icon">📅</span> Calendar
+                </a>
+                <a href="#groups" class="nav-item" data-section="groups">
+                    <span class="icon">👨‍👩‍👧‍👦</span> Groups
+                </a>
+                <a href="#events" class="nav-item" data-section="events">
+                    <span class="icon">🎉</span> Events
+                </a>
+                <a href="#marketplace" class="nav-item" data-section="marketplace">
+                    <span class="icon">🛍️</span> Marketplace
+                </a>
+                <a href="#verification" class="nav-item" data-section="verification">
+                    <span class="icon">✅</span> Get Verified
+                </a>
+                <a href="#privacy" class="nav-item" data-section="privacy">
+                    <span class="icon">🔒</span> Privacy Settings
+                </a>
+                <a href="#wallet" class="nav-item" data-section="wallet">
+                    <span class="icon">💰</span> Wallet
+                </a>
+                <a href="#subscriptions" class="nav-item" data-section="subscriptions">
+                    <span class="icon">💎</span> Subscriptions
+                </a>
+                <a href="#rewards" class="nav-item" data-section="rewards">
+                    <span class="icon">🎁</span> Rewards
+                </a>
+                <a href="#settings" class="nav-item" data-section="settings">
+                    <span class="icon">⚙️</span> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 id="section-title">Dashboard Overview</h1>
+                </div>
+                <div class="header-right">
+                    <button class="icon-btn" title="Messages">
+                        💬 <span class="badge-small">5</span>
+                    </button>
+                    <button class="icon-btn" title="Notifications">
+                        🔔 <span class="badge-small">12</span>
+                    </button>
+                    <div class="user-menu">
+                        <img src="/images/default-avatar.jpg" alt="User" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23666%22/%3E%3Ctext x=%2250%22 y=%2265%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22white%22%3E👤%3C/text%3E%3C/svg%3E'">
+                        <span>User123</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section id="overview-section" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Profile Views</h3>
+                        <p class="stat-number">1,234</p>
+                        <span class="stat-change positive">+15%</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Videos Shared</h3>
+                        <p class="stat-number">48</p>
+                        <span class="stat-change positive">+3 this week</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pictures Shared</h3>
+                        <p class="stat-number">156</p>
+                        <span class="stat-change positive">+12 this week</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Meetups Attended</h3>
+                        <p class="stat-number">7</p>
+                        <span class="stat-change">2 upcoming</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-widgets">
+                    <div class="widget">
+                        <h3>Recent Activity</h3>
+                        <ul class="activity-list">
+                            <li>
+                                <span class="activity-icon">👍</span>
+                                <span>Sarah liked your video</span>
+                                <span class="time">2 mins ago</span>
+                            </li>
+                            <li>
+                                <span class="activity-icon">💬</span>
+                                <span>New message from Mike</span>
+                                <span class="time">15 mins ago</span>
+                            </li>
+                            <li>
+                                <span class="activity-icon">📍</span>
+                                <span>Meetup in Toronto tomorrow</span>
+                                <span class="time">1 hour ago</span>
+                            </li>
+                            <li>
+                                <span class="activity-icon">⭐</span>
+                                <span>You have a new match!</span>
+                                <span class="time">3 hours ago</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="action-btn" onclick="showSection('upload')">📹 Upload Video</button>
+                            <button class="action-btn" onclick="showSection('upload')">📸 Upload Picture</button>
+                            <button class="action-btn" onclick="showSection('meetups')">📍 Create Meetup</button>
+                            <button class="action-btn" onclick="showSection('chat')">💬 Start Chat</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Videos Section -->
+            <section id="videos-section" class="content-section">
+                <div class="section-header">
+                    <h2>Video Content</h2>
+                    <button class="btn-primary" onclick="showUploadModal('video')">Upload New Video</button>
+                </div>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-thumbnail">📹</div>
+                        <div class="content-info">
+                            <h4>Sample Video 1</h4>
+                            <p>1.2K views • 24 likes</p>
+                        </div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-thumbnail">📹</div>
+                        <div class="content-info">
+                            <h4>Sample Video 2</h4>
+                            <p>856 views • 18 likes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pictures Section -->
+            <section id="pictures-section" class="content-section">
+                <div class="section-header">
+                    <h2>Picture Gallery</h2>
+                    <button class="btn-primary" onclick="showUploadModal('picture')">Upload New Picture</button>
+                </div>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-thumbnail">📸</div>
+                        <div class="content-info">
+                            <h4>Photo Album 1</h4>
+                            <p>2.1K views • 45 likes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meetups Section -->
+            <section id="meetups-section" class="content-section">
+                <div class="section-header">
+                    <h2>Ontario Meetups</h2>
+                    <button class="btn-primary" onclick="showMeetupModal()">Create New Meetup</button>
+                </div>
+                <div class="meetup-filters">
+                    <select id="city-filter">
+                        <option value="">All Ontario Cities</option>
+                        <option value="Toronto">Toronto</option>
+                        <option value="Ottawa">Ottawa</option>
+                        <option value="Mississauga">Mississauga</option>
+                        <option value="Hamilton">Hamilton</option>
+                        <option value="London">London</option>
+                        <option value="Windsor">Windsor</option>
+                        <option value="Kitchener">Kitchener</option>
+                    </select>
+                    <input type="date" id="date-filter" placeholder="Select Date">
+                </div>
+                <div class="meetup-list">
+                    <div class="meetup-card">
+                        <div class="meetup-header">
+                            <h3>Downtown Toronto Meetup</h3>
+                            <span class="meetup-badge">5 spots left</span>
+                        </div>
+                        <p class="meetup-location">📍 Toronto, Ontario</p>
+                        <p class="meetup-date">📅 November 25, 2024 at 7:00 PM</p>
+                        <p class="meetup-attendees">👥 15 attending (Max: 20)</p>
+                        <button class="btn-join">Join Meetup</button>
+                    </div>
+                    <div class="meetup-card">
+                        <div class="meetup-header">
+                            <h3>Ottawa Weekend Gathering</h3>
+                            <span class="meetup-badge">3 spots left</span>
+                        </div>
+                        <p class="meetup-location">📍 Ottawa, Ontario</p>
+                        <p class="meetup-date">📅 November 28, 2024 at 8:00 PM</p>
+                        <p class="meetup-attendees">👥 17 attending (Max: 20)</p>
+                        <button class="btn-join">Join Meetup</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chat Section -->
+            <section id="chat-section" class="content-section">
+                <div class="chat-container">
+                    <div class="chat-sidebar">
+                        <h3>Conversations</h3>
+                        <div class="chat-list">
+                            <div class="chat-item active">
+                                <div class="chat-avatar">👤</div>
+                                <div class="chat-preview">
+                                    <h4>Sarah M.</h4>
+                                    <p>Hey! How are you?</p>
+                                </div>
+                                <span class="chat-time">2m</span>
+                            </div>
+                            <div class="chat-item">
+                                <div class="chat-avatar">👤</div>
+                                <div class="chat-preview">
+                                    <h4>Mike T.</h4>
+                                    <p>See you at the meetup!</p>
+                                </div>
+                                <span class="chat-time">1h</span>
+                            </div>
+                            <div class="chat-item">
+                                <div class="chat-avatar">👤</div>
+                                <div class="chat-preview">
+                                    <h4>Toronto Group</h4>
+                                    <p>15 messages</p>
+                                </div>
+                                <span class="chat-time">3h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-main">
+                        <div class="chat-header">
+                            <h3>Sarah M.</h3>
+                            <div class="chat-actions">
+                                <button class="icon-btn" title="Video Call">📹</button>
+                                <button class="icon-btn" title="Voice Call">📞</button>
+                                <button class="icon-btn" title="More">⋯</button>
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message received">
+                                <p>Hey! How are you?</p>
+                                <span class="message-time">2:45 PM</span>
+                            </div>
+                            <div class="message sent">
+                                <p>I'm good! How about you?</p>
+                                <span class="message-time">2:46 PM</span>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="message-input" placeholder="Type a message...">
+                            <button onclick="sendMessage()">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile-section" class="content-section">
+                <h2>Your Profile</h2>
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">👤</div>
+                        <div class="profile-info">
+                            <h3>User123 <span class="verified-badge">✅</span></h3>
+                            <p>Location: Toronto, Ontario</p>
+                            <p>Member since: November 2024</p>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <strong>156</strong>
+                            <span>Followers</span>
+                        </div>
+                        <div class="stat">
+                            <strong>234</strong>
+                            <span>Following</span>
+                        </div>
+                        <div class="stat">
+                            <strong>48</strong>
+                            <span>Videos</span>
+                        </div>
+                        <div class="stat">
+                            <strong>156</strong>
+                            <span>Pictures</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary">Edit Profile</button>
+                </div>
+            </section>
+
+            <!-- Additional Sections (collapsed for brevity) -->
+            <section id="upload-section" class="content-section">
+                <h2>Upload Content</h2>
+                <div class="upload-container">
+                    <div class="upload-option">
+                        <h3>📹 Upload Video</h3>
+                        <input type="file" accept="video/*" id="video-upload">
+                        <button class="btn-primary">Select Video File</button>
+                    </div>
+                    <div class="upload-option">
+                        <h3>📸 Upload Picture</h3>
+                        <input type="file" accept="image/*" id="picture-upload">
+                        <button class="btn-primary">Select Picture File</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="favorites-section" class="content-section">
+                <h2>⭐ Your Favorites</h2>
+                <p>Content you've saved for later viewing</p>
+            </section>
+
+            <section id="matches-section" class="content-section">
+                <h2>💘 Your Matches</h2>
+                <p>People you've matched with based on preferences</p>
+            </section>
+
+            <section id="friends-section" class="content-section">
+                <h2>👥 Friends List</h2>
+                <p>Your connected friends on the platform</p>
+            </section>
+
+            <section id="notifications-section" class="content-section">
+                <h2>🔔 Notifications</h2>
+                <div class="notification-list">
+                    <div class="notification">New like on your video</div>
+                    <div class="notification">New message from Sarah</div>
+                    <div class="notification">Meetup reminder: Tomorrow at 7 PM</div>
+                </div>
+            </section>
+
+            <section id="search-section" class="content-section">
+                <h2>🔍 Advanced Search</h2>
+                <div class="search-filters">
+                    <input type="text" placeholder="Search users, content, meetups...">
+                    <select><option>All Content Types</option></select>
+                    <select><option>All Ontario Cities</option></select>
+                    <button class="btn-primary">Search</button>
+                </div>
+            </section>
+
+            <section id="analytics-section" class="content-section">
+                <h2>📈 Analytics Dashboard</h2>
+                <p>Track your content performance and engagement metrics</p>
+            </section>
+
+            <section id="calendar-section" class="content-section">
+                <h2>📅 Event Calendar</h2>
+                <p>View all your upcoming meetups and events</p>
+            </section>
+
+            <section id="groups-section" class="content-section">
+                <h2>👨‍👩‍👧‍👦 Groups</h2>
+                <p>Join or create interest-based groups</p>
+            </section>
+
+            <section id="events-section" class="content-section">
+                <h2>🎉 Special Events</h2>
+                <p>Featured events happening across Ontario</p>
+            </section>
+
+            <section id="marketplace-section" class="content-section">
+                <h2>🛍️ Marketplace</h2>
+                <p>Buy and sell items within the community</p>
+            </section>
+
+            <section id="verification-section" class="content-section">
+                <h2>✅ Get Verified</h2>
+                <p>Apply for verified status to gain trust and access to premium features</p>
+                <button class="btn-primary">Start Verification Process</button>
+            </section>
+
+            <section id="privacy-section" class="content-section">
+                <h2>🔒 Privacy Settings</h2>
+                <div class="privacy-options">
+                    <label><input type="checkbox" checked> Show profile in search results</label>
+                    <label><input type="checkbox" checked> Allow messages from non-friends</label>
+                    <label><input type="checkbox"> Anonymous browsing mode</label>
+                    <label><input type="checkbox" checked> Location sharing with matches</label>
+                </div>
+            </section>
+
+            <section id="wallet-section" class="content-section">
+                <h2>💰 Wallet & Transactions</h2>
+                <p>Manage your credits and transactions</p>
+            </section>
+
+            <section id="subscriptions-section" class="content-section">
+                <h2>💎 Premium Subscriptions</h2>
+                <p>Upgrade to premium for exclusive features</p>
+            </section>
+
+            <section id="rewards-section" class="content-section">
+                <h2>🎁 Rewards Program</h2>
+                <p>Earn rewards for active participation</p>
+            </section>
+
+            <section id="settings-section" class="content-section">
+                <h2>⚙️ Account Settings</h2>
+                <p>Manage your account preferences and settings</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

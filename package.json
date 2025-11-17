@@ -1,0 +1,25 @@
+{
+  "name": "hookup-platform",
+  "version": "1.0.0",
+  "description": "Adult hookup and video content sharing platform for Ontario, Canada",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "hookup",
+    "video-sharing",
+    "social",
+    "ontario",
+    "canada"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1",
+    "body-parser": "^1.20.3"
+  }
+}
