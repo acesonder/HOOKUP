@@ -18,6 +18,7 @@
                     <a href="#about">About</a>
                     <a href="#login" class="btn-login">Login</a>
                     <a href="#signup" class="btn-signup">Sign Up</a>
+                    <a href="#admin" onclick="showAdminAccess(event)" class="btn-admin">⚙️ Admin</a>
                 </div>
             </nav>
             
@@ -109,6 +110,18 @@
             <p>© 2024 HOOKUP Platform. Ontario, Canada. All Rights Reserved.</p>
             <p>Must be 18+ to use this platform. Terms of Service | Privacy Policy</p>
         </footer>
+    </div>
+
+    <!-- Admin Access Modal -->
+    <div id="admin-access-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdminModal()">&times;</span>
+            <h2>🔐 Admin Access</h2>
+            <p>Enter admin access code to continue</p>
+            <input type="password" id="admin-code-input" placeholder="Enter access code" />
+            <button onclick="verifyAdminAccess()" class="btn-verify">Verify Access</button>
+            <p id="admin-error" class="error-message"></p>
+        </div>
     </div>
 
     <script src="/js/main.js"></script>

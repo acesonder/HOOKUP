@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Console - HOOKUP Platform</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="logo">
+                <h2>⚙️ HOOKUP Admin</h2>
+            </div>
+            
+            <nav class="admin-nav">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                    <span class="icon">📊</span> Dashboard
+                </a>
+                <a href="#users" class="nav-item" data-section="users">
+                    <span class="icon">👥</span> User Management
+                </a>
+                <a href="#content" class="nav-item" data-section="content">
+                    <span class="icon">📹</span> Content Moderation
+                </a>
+                <a href="#meetups" class="nav-item" data-section="meetups">
+                    <span class="icon">📍</span> Meetup Management
+                </a>
+                <a href="#reports" class="nav-item" data-section="reports">
+                    <span class="icon">⚠️</span> Reports & Flags
+                    <span class="badge">8</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-section="analytics">
+                    <span class="icon">📈</span> Analytics
+                </a>
+                <a href="#verification" class="nav-item" data-section="verification">
+                    <span class="icon">✅</span> Verification Requests
+                    <span class="badge">5</span>
+                </a>
+                <a href="#payments" class="nav-item" data-section="payments">
+                    <span class="icon">💰</span> Payments & Transactions
+                </a>
+                <a href="#settings" class="nav-item" data-section="settings">
+                    <span class="icon">⚙️</span> System Settings
+                </a>
+                <a href="#logs" class="nav-item" data-section="logs">
+                    <span class="icon">📋</span> Activity Logs
+                </a>
+                <a href="#security" class="nav-item" data-section="security">
+                    <span class="icon">🔒</span> Security
+                </a>
+                <a href="#" onclick="logoutAdmin()" class="nav-item logout">
+                    <span class="icon">🚪</span> Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-left">
+                    <h1 id="section-title">Admin Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <span class="admin-badge">Administrator</span>
+                    <div class="admin-user">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="admin-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p class="stat-number">2,847</p>
+                        <span class="stat-change positive">+124 this week</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Today</h3>
+                        <p class="stat-number">456</p>
+                        <span class="stat-change positive">+18%</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Videos</h3>
+                        <p class="stat-number">8,234</p>
+                        <span class="stat-change positive">+45 today</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Reports</h3>
+                        <p class="stat-number">8</p>
+                        <span class="stat-change warning">Requires attention</span>
+                    </div>
+                </div>
+
+                <div class="admin-widgets">
+                    <div class="widget">
+                        <h3>Recent Activity</h3>
+                        <ul class="activity-list">
+                            <li>
+                                <span class="activity-icon">👤</span>
+                                <span>New user registration: john_doe_123</span>
+                                <span class="time">2 mins ago</span>
+                            </li>
+                            <li>
+                                <span class="activity-icon">📹</span>
+                                <span>Video uploaded by user_456</span>
+                                <span class="time">5 mins ago</span>
+                            </li>
+                            <li>
+                                <span class="activity-icon">⚠️</span>
+                                <span>Content reported by user_789</span>
+                                <span class="time">12 mins ago</span>
+                            </li>
+                            <li>
+                                <span class="activity-icon">✅</span>
+                                <span>User verification approved: sarah_m</span>
+                                <span class="time">25 mins ago</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="action-btn" onclick="showSection('users')">👥 View All Users</button>
+                            <button class="action-btn" onclick="showSection('reports')">⚠️ Review Reports</button>
+                            <button class="action-btn" onclick="showSection('verification')">✅ Verify Users</button>
+                            <button class="action-btn" onclick="showSection('content')">📹 Moderate Content</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Management Section -->
+            <section id="users-section" class="admin-section">
+                <div class="section-header">
+                    <h2>User Management</h2>
+                    <input type="text" placeholder="Search users..." class="search-input">
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>john_doe</td>
+                                <td>john@example.com</td>
+                                <td>Toronto, ON</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>2024-10-15</td>
+                                <td>
+                                    <button class="btn-small">View</button>
+                                    <button class="btn-small btn-warning">Suspend</button>
+                                    <button class="btn-small btn-danger">Ban</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>sarah_m</td>
+                                <td>sarah@example.com</td>
+                                <td>Ottawa, ON</td>
+                                <td><span class="status-badge verified">Verified</span></td>
+                                <td>2024-10-12</td>
+                                <td>
+                                    <button class="btn-small">View</button>
+                                    <button class="btn-small btn-warning">Suspend</button>
+                                    <button class="btn-small btn-danger">Ban</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>mike_t</td>
+                                <td>mike@example.com</td>
+                                <td>Mississauga, ON</td>
+                                <td><span class="status-badge suspended">Suspended</span></td>
+                                <td>2024-09-28</td>
+                                <td>
+                                    <button class="btn-small">View</button>
+                                    <button class="btn-small btn-success">Unsuspend</button>
+                                    <button class="btn-small btn-danger">Ban</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Content Moderation Section -->
+            <section id="content-section" class="admin-section">
+                <div class="section-header">
+                    <h2>Content Moderation</h2>
+                    <select class="filter-select">
+                        <option value="all">All Content</option>
+                        <option value="videos">Videos Only</option>
+                        <option value="pictures">Pictures Only</option>
+                        <option value="flagged">Flagged Content</option>
+                    </select>
+                </div>
+                <div class="content-grid">
+                    <div class="content-card-admin">
+                        <div class="content-thumbnail">📹</div>
+                        <div class="content-info">
+                            <h4>Video Title 1</h4>
+                            <p>Uploaded by: john_doe</p>
+                            <p>Views: 234 | Likes: 45</p>
+                            <div class="content-actions">
+                                <button class="btn-small btn-success">Approve</button>
+                                <button class="btn-small btn-danger">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-card-admin flagged">
+                        <div class="flag-badge">⚠️ Flagged</div>
+                        <div class="content-thumbnail">📹</div>
+                        <div class="content-info">
+                            <h4>Video Title 2</h4>
+                            <p>Uploaded by: user_456</p>
+                            <p>Views: 89 | Reports: 3</p>
+                            <div class="content-actions">
+                                <button class="btn-small">Review</button>
+                                <button class="btn-small btn-danger">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meetup Management Section -->
+            <section id="meetups-section" class="admin-section">
+                <div class="section-header">
+                    <h2>Meetup Management</h2>
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Meetup ID</th>
+                                <th>Title</th>
+                                <th>Organizer</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Attendees</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Toronto Weekend Meetup</td>
+                                <td>john_doe</td>
+                                <td>Toronto, ON</td>
+                                <td>2024-12-01</td>
+                                <td>15/20</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="btn-small">View</button>
+                                    <button class="btn-small btn-danger">Cancel</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports-section" class="admin-section">
+                <div class="section-header">
+                    <h2>Reports & Flags</h2>
+                </div>
+                <div class="reports-list">
+                    <div class="report-card urgent">
+                        <div class="report-header">
+                            <h4>Content Report #1247</h4>
+                            <span class="priority-badge high">High Priority</span>
+                        </div>
+                        <p><strong>Reported by:</strong> user_789</p>
+                        <p><strong>Content:</strong> Video ID #456</p>
+                        <p><strong>Reason:</strong> Inappropriate content</p>
+                        <p><strong>Submitted:</strong> 2 hours ago</p>
+                        <div class="report-actions">
+                            <button class="btn-small btn-success">Dismiss</button>
+                            <button class="btn-small">Review Content</button>
+                            <button class="btn-small btn-danger">Remove Content</button>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-header">
+                            <h4>User Report #1246</h4>
+                            <span class="priority-badge medium">Medium Priority</span>
+                        </div>
+                        <p><strong>Reported by:</strong> user_123</p>
+                        <p><strong>Reported user:</strong> user_456</p>
+                        <p><strong>Reason:</strong> Spam messages</p>
+                        <p><strong>Submitted:</strong> 5 hours ago</p>
+                        <div class="report-actions">
+                            <button class="btn-small btn-success">Dismiss</button>
+                            <button class="btn-small">Review User</button>
+                            <button class="btn-small btn-warning">Warn User</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics-section" class="admin-section">
+                <h2>Analytics & Statistics</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>User Growth</h3>
+                        <p class="big-number">+124</p>
+                        <p>New users this week</p>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Content Uploads</h3>
+                        <p class="big-number">+256</p>
+                        <p>Videos & pictures this week</p>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Meetups Created</h3>
+                        <p class="big-number">18</p>
+                        <p>New meetups this week</p>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Platform Activity</h3>
+                        <p class="big-number">89%</p>
+                        <p>User engagement rate</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Verification Requests Section -->
+            <section id="verification-section" class="admin-section">
+                <div class="section-header">
+                    <h2>Verification Requests</h2>
+                </div>
+                <div class="verification-list">
+                    <div class="verification-card">
+                        <div class="user-info">
+                            <h4>john_doe_123</h4>
+                            <p>Requested: 1 day ago</p>
+                            <p>Documents submitted: Yes</p>
+                        </div>
+                        <div class="verification-actions">
+                            <button class="btn-small btn-success">Approve</button>
+                            <button class="btn-small btn-danger">Reject</button>
+                            <button class="btn-small">Request More Info</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payments Section -->
+            <section id="payments-section" class="admin-section">
+                <div class="section-header">
+                    <h2>Payments & Transactions</h2>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <h3>Total Revenue</h3>
+                        <p class="stat-number">$24,567</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>This Month</h3>
+                        <p class="stat-number">$8,432</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Subscriptions</h3>
+                        <p class="stat-number">847</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Settings Section -->
+            <section id="settings-section" class="admin-section">
+                <h2>System Settings</h2>
+                <div class="settings-form">
+                    <div class="setting-group">
+                        <h3>Platform Settings</h3>
+                        <label>
+                            <input type="checkbox" checked> Enable new user registrations
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> Require age verification
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> Enable video uploads
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> Enable meetup creation
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <h3>Moderation Settings</h3>
+                        <label>
+                            <input type="checkbox" checked> Auto-moderate content
+                        </label>
+                        <label>
+                            <input type="checkbox"> Require admin approval for new videos
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> Enable user reporting
+                        </label>
+                    </div>
+                    <button class="btn-primary">Save Settings</button>
+                </div>
+            </section>
+
+            <!-- Activity Logs Section -->
+            <section id="logs-section" class="admin-section">
+                <div class="section-header">
+                    <h2>Activity Logs</h2>
+                </div>
+                <div class="logs-container">
+                    <div class="log-entry">
+                        <span class="log-time">2024-11-18 04:15:23</span>
+                        <span class="log-action">USER_LOGIN</span>
+                        <span class="log-details">User john_doe logged in from 192.168.1.1</span>
+                    </div>
+                    <div class="log-entry">
+                        <span class="log-time">2024-11-18 04:12:45</span>
+                        <span class="log-action">VIDEO_UPLOAD</span>
+                        <span class="log-details">User sarah_m uploaded video ID #1234</span>
+                    </div>
+                    <div class="log-entry warning">
+                        <span class="log-time">2024-11-18 04:08:12</span>
+                        <span class="log-action">CONTENT_REPORTED</span>
+                        <span class="log-details">User user_789 reported video ID #456</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Section -->
+            <section id="security-section" class="admin-section">
+                <h2>Security & Access Control</h2>
+                <div class="security-settings">
+                    <div class="setting-group">
+                        <h3>Access Control</h3>
+                        <p><strong>Admin Access Code:</strong> 079777 (Change regularly)</p>
+                        <button class="btn-primary">Change Access Code</button>
+                    </div>
+                    <div class="setting-group">
+                        <h3>Rate Limiting</h3>
+                        <p>Current: 100 requests per 15 minutes</p>
+                        <p>Status: <span class="status-badge active">Active</span></p>
+                    </div>
+                    <div class="setting-group">
+                        <h3>Security Alerts</h3>
+                        <p>No security alerts at this time</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>

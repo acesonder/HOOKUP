@@ -44,4 +44,50 @@ document.querySelectorAll('.feature-card').forEach(card => {
     observer.observe(card);
 });
 
+// Admin access modal functions
+function showAdminAccess(event) {
+    event.preventDefault();
+    document.getElementById('admin-access-modal').style.display = 'block';
+}
+
+function closeAdminModal() {
+    document.getElementById('admin-access-modal').style.display = 'none';
+    document.getElementById('admin-code-input').value = '';
+    document.getElementById('admin-error').textContent = '';
+}
+
+function verifyAdminAccess() {
+    const code = document.getElementById('admin-code-input').value;
+    const correctCode = '079777';
+    
+    if (code === correctCode) {
+        // Access granted
+        window.location.href = '/admin';
+    } else {
+        // Access denied
+        document.getElementById('admin-error').textContent = '❌ Invalid access code';
+        document.getElementById('admin-code-input').value = '';
+    }
+}
+
+// Allow Enter key to verify
+document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('admin-code-input');
+    if (input) {
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                verifyAdminAccess();
+            }
+        });
+    }
+});
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('admin-access-modal');
+    if (event.target === modal) {
+        closeAdminModal();
+    }
+}
+
 console.log('HOOKUP Platform - Landing page loaded');
