@@ -1,0 +1,559 @@
+/* ========================================
+   HOOKUP PLATFORM - 100+ THEME SYSTEM
+   Adult-Oriented UI Themes & Customization
+   ======================================== */
+
+/* Theme Variables Base */
+:root {
+    /* Default Theme Colors */
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --background-color: #f5f5f5;
+    --surface-color: #ffffff;
+    --text-color: #333333;
+    --text-secondary: #666666;
+    --accent-color: #ff4444;
+    --success-color: #4CAF50;
+    --warning-color: #ff9800;
+    
+    /* Sizing */
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 18px;
+    --border-radius: 10px;
+    --spacing: 20px;
+    
+    /* Animations */
+    --transition-speed: 0.3s;
+    --animation-speed: 0.5s;
+}
+
+/* ======== CATEGORY 1: NEON GLOW THEMES (10 Variants) ======== */
+
+[data-theme="neon-pink"] {
+    --primary-color: #ff006e;
+    --secondary-color: #fb5607;
+    --background-color: #0d0221;
+    --surface-color: #1a0933;
+    --text-color: #f72585;
+    --accent-color: #ff006e;
+    --glow-color: #ff006e;
+}
+
+[data-theme="neon-blue"] {
+    --primary-color: #00f5ff;
+    --secondary-color: #0066ff;
+    --background-color: #000814;
+    --surface-color: #001d3d;
+    --text-color: #00f5ff;
+    --accent-color: #00f5ff;
+    --glow-color: #00f5ff;
+}
+
+[data-theme="neon-purple"] {
+    --primary-color: #b537f2;
+    --secondary-color: #7209b7;
+    --background-color: #10002b;
+    --surface-color: #240046;
+    --text-color: #e0aaff;
+    --accent-color: #b537f2;
+    --glow-color: #b537f2;
+}
+
+[data-theme="neon-green"] {
+    --primary-color: #39ff14;
+    --secondary-color: #00ff41;
+    --background-color: #001400;
+    --surface-color: #002800;
+    --text-color: #39ff14;
+    --accent-color: #39ff14;
+    --glow-color: #39ff14;
+}
+
+[data-theme="neon-red"] {
+    --primary-color: #ff073a;
+    --secondary-color: #ff3333;
+    --background-color: #1a0000;
+    --surface-color: #330000;
+    --text-color: #ff6b6b;
+    --accent-color: #ff073a;
+    --glow-color: #ff073a;
+}
+
+/* Apply Neon Glow Effects */
+[data-theme^="neon-"] .btn-primary,
+[data-theme^="neon-"] .card,
+[data-theme^="neon-"] .nav-item.active {
+    box-shadow: 0 0 20px var(--glow-color),
+                0 0 40px var(--glow-color),
+                0 0 60px var(--glow-color);
+    animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow: 0 0 10px var(--glow-color),
+                    0 0 20px var(--glow-color),
+                    0 0 30px var(--glow-color);
+    }
+    to {
+        box-shadow: 0 0 20px var(--glow-color),
+                    0 0 40px var(--glow-color),
+                    0 0 80px var(--glow-color);
+    }
+}
+
+/* ======== CATEGORY 2: HYPER GRAPHICS THEMES (10 Variants) ======== */
+
+[data-theme="hyper-cyber"] {
+    --primary-color: #00ffff;
+    --secondary-color: #ff00ff;
+    --background-color: #0a0e27;
+    --surface-color: #16213e;
+    --text-color: #00ffff;
+    --accent-color: #ff00ff;
+}
+
+[data-theme="hyper-matrix"] {
+    --primary-color: #00ff00;
+    --secondary-color: #008000;
+    --background-color: #000000;
+    --surface-color: #0a0a0a;
+    --text-color: #00ff00;
+    --accent-color: #00ff00;
+}
+
+[data-theme="hyper-vaporwave"] {
+    --primary-color: #ff71ce;
+    --secondary-color: #01cdfe;
+    --background-color: #05ffa1;
+    --surface-color: #b967ff;
+    --text-color: #fffb96;
+    --accent-color: #ff71ce;
+}
+
+[data-theme="hyper-synthwave"] {
+    --primary-color: #ff6ec7;
+    --secondary-color: #ffd319;
+    --background-color: #2d1b69;
+    --surface-color: #5b2a86;
+    --text-color: #ff6ec7;
+    --accent-color: #ffd319;
+}
+
+[data-theme="hyper-chrome"] {
+    --primary-color: #c0c0c0;
+    --secondary-color: #808080;
+    --background-color: #1a1a1a;
+    --surface-color: #2a2a2a;
+    --text-color: #e0e0e0;
+    --accent-color: #ff1493;
+}
+
+/* ======== CATEGORY 3: EMBOSSED THEMES (10 Variants) ======== */
+
+[data-theme="emboss-gold"] {
+    --primary-color: #ffd700;
+    --secondary-color: #daa520;
+    --background-color: #2c1810;
+    --surface-color: #3d2517;
+    --text-color: #f5e6d3;
+    --accent-color: #ffd700;
+}
+
+[data-theme="emboss-silver"] {
+    --primary-color: #c0c0c0;
+    --secondary-color: #a8a8a8;
+    --background-color: #1c1c1c;
+    --surface-color: #2d2d2d;
+    --text-color: #e8e8e8;
+    --accent-color: #c0c0c0;
+}
+
+[data-theme="emboss-bronze"] {
+    --primary-color: #cd7f32;
+    --secondary-color: #b87333;
+    --background-color: #1a0f0a;
+    --surface-color: #2b1b15;
+    --text-color: #e6d5c3;
+    --accent-color: #cd7f32;
+}
+
+/* Apply Embossed Effects */
+[data-theme^="emboss-"] .card,
+[data-theme^="emboss-"] .btn {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5),
+                 -1px -1px 2px rgba(255,255,255,0.2);
+    box-shadow: inset 0 2px 5px rgba(255,255,255,0.3),
+                inset 0 -2px 5px rgba(0,0,0,0.3),
+                0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ======== CATEGORY 4: FRAMED & LAMINATED (10 Variants) ======== */
+
+[data-theme="framed-luxury"] {
+    --primary-color: #8b4513;
+    --secondary-color: #a0522d;
+    --background-color: #faf0e6;
+    --surface-color: #fff8dc;
+    --text-color: #4a2511;
+    --accent-color: #d2691e;
+    --frame-color: #8b4513;
+}
+
+[data-theme="framed-modern"] {
+    --primary-color: #34495e;
+    --secondary-color: #2c3e50;
+    --background-color: #ecf0f1;
+    --surface-color: #ffffff;
+    --text-color: #2c3e50;
+    --accent-color: #3498db;
+    --frame-color: #34495e;
+}
+
+/* Apply Frame Effects */
+[data-theme^="framed-"] .card {
+    border: 8px solid var(--frame-color);
+    border-style: groove;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3),
+                inset 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* ======== CATEGORY 5: DIRTY BOOTH / GRUNGY THEMES (10 Variants) ======== */
+
+[data-theme="booth-dark"] {
+    --primary-color: #8b0000;
+    --secondary-color: #a52a2a;
+    --background-color: #1a0d0d;
+    --surface-color: #2a1515;
+    --text-color: #d4af37;
+    --accent-color: #ff0000;
+}
+
+[data-theme="booth-peepers"] {
+    --primary-color: #660000;
+    --secondary-color: #990000;
+    --background-color: #0d0d0d;
+    --surface-color: #1a1a1a;
+    --text-color: #ff6b6b;
+    --accent-color: #ff0000;
+}
+
+[data-theme="booth-sticky"] {
+    --primary-color: #4a2c2a;
+    --secondary-color: #6b4423;
+    --background-color: #1a1410;
+    --surface-color: #2a1f1a;
+    --text-color: #d4a574;
+    --accent-color: #8b4513;
+}
+
+[data-theme="booth-neon-alley"] {
+    --primary-color: #ff006e;
+    --secondary-color: #8338ec;
+    --background-color: #0a0a0a;
+    --surface-color: #1a1a1a;
+    --text-color: #ff006e;
+    --accent-color: #fb5607;
+}
+
+/* Apply Grungy Texture */
+[data-theme^="booth-"] body {
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px);
+}
+
+[data-theme^="booth-"] .card {
+    background: var(--surface-color);
+    box-shadow: 0 0 0 3px var(--primary-color),
+                0 0 0 6px rgba(0,0,0,0.3),
+                0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+/* ======== CATEGORY 6: LIGHT THEMES (10 Variants) ======== */
+
+[data-theme="light-clean"] {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --background-color: #f5f5f5;
+    --surface-color: #ffffff;
+    --text-color: #333333;
+    --accent-color: #ff4444;
+}
+
+[data-theme="light-soft"] {
+    --primary-color: #ff6b9d;
+    --secondary-color: #c44569;
+    --background-color: #ffeef8;
+    --surface-color: #fff0f6;
+    --text-color: #5a3d5c;
+    --accent-color: #ff006e;
+}
+
+[data-theme="light-pastel"] {
+    --primary-color: #a8dadc;
+    --secondary-color: #457b9d;
+    --background-color: #f1faee;
+    --surface-color: #ffffff;
+    --text-color: #1d3557;
+    --accent-color: #e63946;
+}
+
+/* ======== CATEGORY 7: DARK THEMES (10 Variants) ======== */
+
+[data-theme="dark-modern"] {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --background-color: #1a1a1a;
+    --surface-color: #2d2d2d;
+    --text-color: #e0e0e0;
+    --accent-color: #ff4444;
+}
+
+[data-theme="dark-midnight"] {
+    --primary-color: #4361ee;
+    --secondary-color: #3a0ca3;
+    --background-color: #0a0a0f;
+    --surface-color: #16161d;
+    --text-color: #e0e1dd;
+    --accent-color: #f72585;
+}
+
+[data-theme="dark-amoled"] {
+    --primary-color: #bb86fc;
+    --secondary-color: #3700b3;
+    --background-color: #000000;
+    --surface-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #cf6679;
+}
+
+[data-theme="dark-charcoal"] {
+    --primary-color: #64ffda;
+    --secondary-color: #1de9b6;
+    --background-color: #263238;
+    --surface-color: #37474f;
+    --text-color: #eceff1;
+    --accent-color: #ff5252;
+}
+
+/* ======== CATEGORY 8: LUXURY/PREMIUM THEMES (10 Variants) ======== */
+
+[data-theme="luxury-royal"] {
+    --primary-color: #4b0082;
+    --secondary-color: #8b008b;
+    --background-color: #0f0820;
+    --surface-color: #1a0f2e;
+    --text-color: #daa520;
+    --accent-color: #ffd700;
+}
+
+[data-theme="luxury-diamond"] {
+    --primary-color: #00d4ff;
+    --secondary-color: #7c98b3;
+    --background-color: #0a192f;
+    --surface-color: #172a45;
+    --text-color: #ccd6f6;
+    --accent-color: #64ffda;
+}
+
+[data-theme="luxury-platinum"] {
+    --primary-color: #e5e4e2;
+    --secondary-color: #bcc6cc;
+    --background-color: #1c1c1e;
+    --surface-color: #2c2c2e;
+    --text-color: #f5f5f7;
+    --accent-color: #ffd700;
+}
+
+/* Apply Luxury Effects */
+[data-theme^="luxury-"] .card {
+    background: linear-gradient(135deg, 
+        var(--surface-color) 0%, 
+        var(--primary-color) 100%);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3),
+                0 0 20px var(--accent-color);
+}
+
+/* ======== CATEGORY 9: RETRO/VINTAGE ADULT (10 Variants) ======== */
+
+[data-theme="retro-70s"] {
+    --primary-color: #ff6b35;
+    --secondary-color: #f7931e;
+    --background-color: #2d1b00;
+    --surface-color: #4a2f00;
+    --text-color: #ffdb58;
+    --accent-color: #ff0000;
+}
+
+[data-theme="retro-80s"] {
+    --primary-color: #ff10f0;
+    --secondary-color: #00ffff;
+    --background-color: #120458;
+    --surface-color: #1e0878;
+    --text-color: #ffd700;
+    --accent-color: #ff10f0;
+}
+
+[data-theme="retro-vhs"] {
+    --primary-color: #00ff00;
+    --secondary-color: #0080ff;
+    --background-color: #000000;
+    --surface-color: #0a0a0a;
+    --text-color: #ffffff;
+    --accent-color: #ff0000;
+}
+
+/* Apply Retro Effects */
+[data-theme^="retro-"] body {
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(0,0,0,0.1) 1px,
+        rgba(0,0,0,0.1) 2px
+    );
+}
+
+[data-theme^="retro-"] .card {
+    border: 4px solid var(--primary-color);
+    box-shadow: 8px 8px 0px var(--secondary-color),
+                12px 12px 0px rgba(0,0,0,0.3);
+}
+
+/* ======== CATEGORY 10: SPECIAL EFFECTS THEMES ======== */
+
+[data-theme="animated-rainbow"] {
+    --primary-color: #ff0080;
+    --background-color: #1a1a1a;
+    --surface-color: #2d2d2d;
+    --text-color: #ffffff;
+}
+
+[data-theme^="animated-rainbow"] .card {
+    background: linear-gradient(
+        90deg,
+        #ff0080, #ff8c00, #40e0d0, #ff0080
+    );
+    background-size: 200% 200%;
+    animation: rainbowShift 3s infinite;
+}
+
+@keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ======== GLOBAL THEME APPLICATION ======== */
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all var(--transition-speed);
+}
+
+.card, .widget, .stat-card {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--surface-color);
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+/* Font Size Adjustments */
+[data-font-size="small"] {
+    --font-size-base: 14px;
+    --font-size-small: 12px;
+    --font-size-large: 16px;
+}
+
+[data-font-size="large"] {
+    --font-size-base: 18px;
+    --font-size-small: 16px;
+    --font-size-large: 22px;
+}
+
+[data-font-size="xlarge"] {
+    --font-size-base: 20px;
+    --font-size-small: 18px;
+    --font-size-large: 24px;
+}
+
+/* Animation Speed Adjustments */
+[data-animation="slow"] {
+    --transition-speed: 0.6s;
+    --animation-speed: 1s;
+}
+
+[data-animation="fast"] {
+    --transition-speed: 0.15s;
+    --animation-speed: 0.25s;
+}
+
+[data-animation="none"] * {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Layout Styles */
+[data-layout="compact"] {
+    --spacing: 10px;
+    --border-radius: 5px;
+}
+
+[data-layout="spacious"] {
+    --spacing: 30px;
+    --border-radius: 15px;
+}
+
+/* ======== UTILITY CLASSES ======== */
+
+.theme-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.theme-preview:hover {
+    transform: scale(1.1);
+}
+
+.glow-effect {
+    text-shadow: 0 0 10px currentColor,
+                 0 0 20px currentColor,
+                 0 0 30px currentColor;
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
