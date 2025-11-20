@@ -1,7 +1,26 @@
 // Dashboard functionality
 
 // Initialize Socket.IO connection for real-time chat
-const socket = io();
+let socket;
+try {
+    if (typeof io !== 'undefined') {
+        socket = io();
+    } else {
+        console.warn('Socket.IO not available, chat features will be limited');
+        socket = {
+            on: () => {},
+            emit: () => {},
+            to: () => ({ emit: () => {} })
+        };
+    }
+} catch (e) {
+    console.warn('Socket.IO initialization failed:', e);
+    socket = {
+        on: () => {},
+        emit: () => {},
+        to: () => ({ emit: () => {} })
+    };
+}
 
 // Current user data (in production, this would come from authentication)
 const currentUser = {
@@ -58,6 +77,8 @@ function showSection(sectionName) {
         'wallet': 'Wallet & Transactions',
         'subscriptions': 'Premium Subscriptions',
         'rewards': 'Rewards Program',
+        'profile-views': 'Profile Views',
+        'customization': 'Customize Your Profile',
         'settings': 'Account Settings'
     };
     
@@ -351,3 +372,33 @@ const features = {
 console.log('HOOKUP Dashboard loaded with', Object.keys(features).length, 'features');
 console.log('Current user:', currentUser);
 console.log('Connected to Ontario location services');
+
+// Initialize new features when sections are shown
+document.addEventListener('DOMContentLoaded', () => {
+    // Add event listener for profile views section
+    const profileViewsNav = document.querySelector('[data-section="profile-views"]');
+    if (profileViewsNav) {
+        profileViewsNav.addEventListener('click', () => {
+            setTimeout(() => {
+                if (typeof profileTracker !== 'undefined') {
+                    profileTracker.setupProfileViewsSection();
+                }
+            }, 100);
+        });
+    }
+    
+    // Add event listener for customization section
+    const customizationNav = document.querySelector('[data-section="customization"]');
+    if (customizationNav) {
+        customizationNav.addEventListener('click', () => {
+            setTimeout(() => {
+                if (typeof profileCustomization !== 'undefined') {
+                    const container = document.getElementById('customization-container');
+                    if (container) {
+                        container.innerHTML = profileCustomization.render();
+                    }
+                }
+            }, 100);
+        });
+    }
+});

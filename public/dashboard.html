@@ -6,6 +6,9 @@
     <title>Dashboard - HOOKUP Platform</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/chat-bubble.css">
+    <link rel="stylesheet" href="/css/profile-features.css">
+    <link rel="stylesheet" href="/css/additional-features.css">
 </head>
 <body>
     <div class="dashboard-container">
@@ -83,6 +86,13 @@
                 </a>
                 <a href="#rewards" class="nav-item" data-section="rewards">
                     <span class="icon">🎁</span> Rewards
+                </a>
+                <a href="#profile-views" class="nav-item" data-section="profile-views">
+                    <span class="icon">👁️</span> Profile Views
+                    <span class="badge">5</span>
+                </a>
+                <a href="#customization" class="nav-item" data-section="customization">
+                    <span class="icon">🎨</span> Customize Profile
                 </a>
                 <a href="#settings" class="nav-item" data-section="settings">
                     <span class="icon">⚙️</span> Settings
@@ -462,10 +472,25 @@
                 <h2>⚙️ Account Settings</h2>
                 <p>Manage your account preferences and settings</p>
             </section>
+            
+            <!-- Profile Views Section -->
+            <section id="profile-views-section" class="content-section">
+                <!-- Content will be dynamically loaded -->
+            </section>
+            
+            <!-- Profile Customization Section -->
+            <section id="customization-section" class="content-section">
+                <div id="customization-container">
+                    <!-- Content will be dynamically loaded -->
+                </div>
+            </section>
         </main>
     </div>
 
-    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat-bubble.js"></script>
+    <script src="/js/profile-tracking.js"></script>
+    <script src="/js/additional-features.js"></script>
     <script src="/js/dashboard.js"></script>
 </body>
 </html>
